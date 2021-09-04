@@ -54,7 +54,7 @@ function App() {
 
     const handleDelete=async(id)=>{
         try{
-        await axios.delete(`https://b5gnode.herokuapp.com/update_task/${id}`)
+        await axios.delete(`https://b5gnode.herokuapp.com/delete_task/${id}`)
         fetchTask();
         }
         catch(error){
