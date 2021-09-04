@@ -17,7 +17,7 @@ function App() {
         try {
             //    let product=await axios.get("http://localhost:3000/list_all_todo")
             //    console.log(product)
-            let toDolistDate = await axios.get("http://localhost:3000/list_all_todo");
+            let toDolistDate = await axios.get("https://b5gnode.herokuapp.com/list_all_todo");
             // console.log(toDolistDate)
             setTodo([...toDolistDate.data]);
         }
@@ -29,7 +29,7 @@ function App() {
     const handleCreateTask = async () => {
 
         try {
-            let postData = await axios.post("http://localhost:3000/create_task", { message: task })
+            let postData = await axios.post("https://b5gnode.herokuapp.com/create_task", { message: task })
             fetchTask();
             // alert(postData.data.message)
             setTask("")
@@ -43,7 +43,7 @@ function App() {
 
     const handleChange = async (e, id) => {
         try {
-            let updateData = await axios.put(`http://localhost:3000/update_task/${id}`, { status: e.target.checked })
+            let updateData = await axios.put(`https://b5gnode.herokuapp.com/update_task/${id}`, { status: e.target.checked })
             fetchTask();
         }
         catch (error) {
@@ -54,7 +54,7 @@ function App() {
 
     const handleDelete=async(id)=>{
         try{
-        await axios.delete(`http://localhost:3000/delete_task/${id}`)
+        await axios.delete(`https://b5gnode.herokuapp.com/${id}`)
         fetchTask();
         }
         catch(error){
